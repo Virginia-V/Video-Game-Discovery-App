@@ -13,7 +13,6 @@ function App() {
         {' '}
         <GridItem
           area="aside"
-          bg="gold"
         >
           Aside
         </GridItem>
@@ -21,7 +20,6 @@ function App() {
 
       <GridItem
         area="main"
-        bg="dodgerblue"
       >
         Main
       </GridItem>
