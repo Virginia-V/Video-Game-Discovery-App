@@ -2,9 +2,10 @@ import { CanceledError } from 'axios';
 import { useEffect, useState } from 'react';
 import apiClient from '../services/api-client';
 
-interface Game {
+export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface FetchGameResponse {
@@ -17,6 +18,7 @@ const useGames = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
+    // It allows the pending request to be cancelled when the component unmounts before the request has resolved.
     const controller = new AbortController();
 
     apiClient
